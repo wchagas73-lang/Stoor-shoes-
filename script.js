@@ -107,9 +107,12 @@ if('IntersectionObserver' in window){
 }
 
 
-// Uma unica borboleta discreta no centro da grade de produtos.
-const galleryButterfly=document.createElement('span');
-galleryButterfly.className='site-butterfly gallery-butterfly gb-one';
-galleryButterfly.setAttribute('aria-hidden','true');
-galleryButterfly.textContent='🦋';
-document.getElementById('productGrid').appendChild(galleryButterfly);
+// Borboletas distribuidas ao longo de toda a selecao de modelos.
+const productGrid=document.getElementById('productGrid');
+['gb-one','gb-two','gb-three','gb-four'].forEach(className=>{
+  const butterfly=document.createElement('span');
+  butterfly.className='site-butterfly gallery-butterfly '+className;
+  butterfly.setAttribute('aria-hidden','true');
+  butterfly.textContent='🦋';
+  productGrid.appendChild(butterfly);
+});
