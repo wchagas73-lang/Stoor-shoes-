@@ -45,3 +45,12 @@ document.getElementById('closeSearch').addEventListener('click',()=>{searchPanel
 searchPanel.addEventListener('click',e=>{if(e.target===searchPanel){searchPanel.classList.remove('open');searchPanel.setAttribute('aria-hidden','true')}});
 document.getElementById('searchInput').addEventListener('input',e=>{const term=e.target.value.toLocaleLowerCase('pt-BR');document.querySelectorAll('.product-card').forEach(card=>{card.style.display=card.innerText.toLocaleLowerCase('pt-BR').includes(term)?'':'none'})});
 document.getElementById('year').textContent=new Date().getFullYear();
+
+
+// Pausa os carrosseis enquanto a pessoa mantém o dedo ou o mouse pressionado.
+document.querySelectorAll('.review-carousel').forEach(carousel=>{
+  carousel.addEventListener('pointerdown',()=>carousel.classList.add('is-paused'));
+  ['pointerup','pointercancel','pointerleave'].forEach(eventName=>{
+    carousel.addEventListener(eventName,()=>carousel.classList.remove('is-paused'));
+  });
+});
