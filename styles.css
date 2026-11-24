@@ -2,3 +2,21 @@
 @media(max-width:900px){.site-header{height:74px;padding:0 5%}.brand img{width:90px;height:60px}.main-nav{gap:15px}.main-nav a{font-size:9px}.hero{min-height:540px;grid-template-columns:48% 52%}.hero-copy{padding:55px 5vw 45px 8%}.hero-image{min-height:540px}.hero-wordmark{font-size:33px}.occasion-card img{height:190px}.product-photo{height:280px}.why-section{padding-inline:7%;gap:6%}.why-image{height:400px}.review-grid{grid-template-columns:repeat(3,1fr)}.footer-top{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.site-header{height:68px}.brand img{width:84px;height:56px}.menu-toggle{display:block;margin-left:auto;margin-right:12px;font-size:22px}.main-nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fffdfa;padding:22px 7%;box-shadow:0 12px 20px #0001;flex-direction:column;gap:20px}.main-nav.open{display:flex}.main-nav a{font-size:11px}.header-actions{gap:10px}.icon-button,.bag-link{font-size:23px}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:55px 8% 48px}.hero-wordmark{font-size:37px;margin:17px 0}.hero h1{font-size:43px}.hero-copy>p{font-size:13px}.hero-note{margin-top:28px}.hero-image{min-height:410px;grid-row:1}.hero-image:before{background:linear-gradient(0deg,rgba(100,29,37,.4),transparent 55%)}.image-stamp{width:100px;height:100px;right:6%;top:7%}.image-stamp span{font-size:14px}.image-stamp b{font-size:8px}.benefits{grid-template-columns:repeat(2,1fr);row-gap:25px;padding:27px 0}.benefits article:nth-child(2){border:0}.benefit-icon{font-size:27px}.benefits b{font-size:11px}.section-pad{padding:62px 0}.section-heading{padding:0 6%;margin-bottom:27px}.section-heading h2,.why-copy h2,.visit-copy h2{font-size:34px}.section-heading>p{font-size:12px}.occasion-grid{grid-template-columns:repeat(2,1fr);gap:11px}.occasion-card{padding:6px 6px 14px}.occasion-card img{height:210px}.occasion-card span{font-size:8px;margin:12px 8px 6px}.occasion-card b{font-size:15px;margin:0 8px}.product-grid{grid-template-columns:repeat(2,1fr);gap:12px}.product-photo{height:220px}.product-info{padding:12px 10px 14px;grid-template-columns:1fr}.product-info h3{font-size:15px}.product-info strong{font-size:9px}.text-link{font-size:8px}.why-section{grid-template-columns:1fr;padding:0 0 55px;gap:30px}.why-image{height:340px}.why-copy{padding:0 8%}.why-copy ul{gap:14px}.why-copy li{font-size:11px}.review-grid{grid-template-columns:repeat(2,1fr);gap:9px}.review-grid article{padding:14px 12px;min-height:145px}.review-grid p{font-size:12px}.faq-list{width:86%}.faq-list summary{font-size:14px}.faq-list details{padding:16px 2px}.visit-section{grid-template-columns:1fr;gap:30px;padding:58px 0;width:86%}.map-placeholder{min-height:250px}.footer{padding:40px 7% 18px}.footer-top{grid-template-columns:repeat(2,1fr);gap:25px 18px}.footer-top>p{font-size:15px}.footer-links{font-size:10px}.footer-bottom{gap:10px;line-height:1.6;flex-direction:column}.floating-social{right:13px;bottom:14px;gap:8px}.social{width:43px;height:43px;font-size:22px}.social svg{width:23px;height:23px}}
 @media(max-width:370px){.hero h1{font-size:37px}.occasion-card img{height:175px}.product-photo{height:185px}.review-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+
+/* Ajustes de navegação e galeria */
+body{padding-top:88px}
+.site-header{position:fixed;top:0;left:0;right:0;width:100%}
+section[id]{scroll-margin-top:105px}
+.hero-image .image-stamp{display:none!important}
+.occasion-card img,.product-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.map-frame{min-height:330px;overflow:hidden;background:#eee5d9}
+.map-frame iframe{display:block;width:100%;height:330px;border:0}
+.floating-social{position:fixed;right:22px;bottom:22px;z-index:30}
+@media(max-width:900px){body{padding-top:74px}}
+@media(max-width:650px){
+ body{padding-top:68px}
+ .site-header{position:fixed}
+ .main-nav{top:68px}
+ .map-frame,.map-frame iframe{min-height:250px;height:250px}
+ .floating-social{right:13px;bottom:14px}
+}
