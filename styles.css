@@ -383,3 +383,25 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){
   .stoor-butterfly{animation:none;opacity:.58;transform:translateX(calc(var(--flight-top) * .05))}
 }
+
+
+/* Marca oficial transparente ampliada sobre a foto principal */
+.site-header .brand{display:block;width:1px;height:1px;overflow:hidden}
+.hero-image .hero-logo{
+  position:absolute;
+  z-index:3;
+  top:clamp(18px,4vw,42px);
+  left:50%;
+  transform:translateX(-50%);
+  width:clamp(190px,24vw,310px);
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 1px rgba(45,15,18,.55)) drop-shadow(0 5px 8px rgba(35,10,14,.3));
+  pointer-events:none;
+}
+@media(max-width:650px){
+  .hero-image .hero-logo{
+    top:18px;
+    width:clamp(190px,58vw,260px);
+  }
+}
