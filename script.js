@@ -54,3 +54,31 @@ document.querySelectorAll('.review-carousel').forEach(carousel=>{
     carousel.addEventListener(eventName,()=>carousel.classList.remove('is-paused'));
   });
 });
+
+
+// Abre as fotografias do site em tamanho original ao tocar ou clicar.
+const photoViewer=document.createElement('div');
+photoViewer.className='photo-viewer';
+photoViewer.setAttribute('aria-hidden','true');
+photoViewer.innerHTML='<button class="photo-viewer-close" type="button" aria-label="Fechar imagem">×</button><img alt="Imagem ampliada">';
+document.body.appendChild(photoViewer);
+const viewerImage=photoViewer.querySelector('img');
+function closePhotoViewer(){
+  photoViewer.classList.remove('open');
+  photoViewer.setAttribute('aria-hidden','true');
+  viewerImage.removeAttribute('src');
+}
+document.addEventListener('click',event=>{
+  const photo=event.target.closest('.hero-image img, .occasion-card img, .product-photo img, .why-image img');
+  if(photo){
+    event.preventDefault();
+    viewerImage.src=photo.currentSrc||photo.src;
+    viewerImage.alt=photo.alt||'Fotografia ampliada da Stoor Shoes';
+    photoViewer.classList.add('open');
+    photoViewer.setAttribute('aria-hidden','false');
+  }
+  if(event.target===photoViewer||event.target.closest('.photo-viewer-close')) closePhotoViewer();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&photoViewer.classList.contains('open')) closePhotoViewer();
+});
