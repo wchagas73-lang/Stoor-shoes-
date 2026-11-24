@@ -106,3 +106,12 @@ if('IntersectionObserver' in window){
   revealTargets.forEach(element=>element.classList.add('is-visible'));
 }
 
+
+// Quatro borboletas decorativas entre os produtos, seguindo a distribuicao da galeria original.
+['gb-one','gb-two','gb-three','gb-four'].forEach(className=>{
+ const butterfly=document.createElement('span');
+ butterfly.className='site-butterfly gallery-butterfly '+className;
+ butterfly.setAttribute('aria-hidden','true');
+ butterfly.textContent='🦋';
+ document.getElementById('productGrid').appendChild(butterfly);
+});
