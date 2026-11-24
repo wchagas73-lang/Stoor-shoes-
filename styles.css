@@ -184,3 +184,77 @@ img{max-width:100%}
  .occasion-card b{font-size:14px}
  .product-info{padding:10px 8px 12px}
 }
+
+
+/* Abertura cinematográfica e brilho dourado nos botões principais */
+@keyframes stoorHeroPhotoIn{
+ from{opacity:.45;transform:scale(1.075)}
+ to{opacity:1;transform:scale(1)}
+}
+@keyframes stoorHeroTextIn{
+ from{opacity:0;transform:translateY(22px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.hero-image>img{
+ animation:stoorHeroPhotoIn 1.35s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-copy .eyebrow,
+.hero-copy .hero-wordmark,
+.hero-copy h1,
+.hero-copy>p,
+.hero-copy .btn,
+.hero-copy .hero-note{
+ opacity:0;
+ animation:stoorHeroTextIn .75s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-copy .eyebrow{animation-delay:.18s}
+.hero-copy .hero-wordmark{animation-delay:.32s}
+.hero-copy h1{animation-delay:.46s}
+.hero-copy>p{animation-delay:.60s}
+.hero-copy .btn{animation-delay:.76s}
+.hero-copy .hero-note{animation-delay:.9s}
+.hero-copy .btn-light,
+.why-copy .btn-dark,
+.visit-copy .btn{
+ position:relative;
+ isolation:isolate;
+ overflow:hidden;
+ border:1px solid rgba(185,154,105,.65);
+ box-shadow:0 5px 18px rgba(32,12,14,.12);
+}
+.hero-copy .btn-light::after,
+.why-copy .btn-dark::after,
+.visit-copy .btn::after{
+ content:"";
+ position:absolute;
+ z-index:-1;
+ top:-60%;
+ bottom:-60%;
+ left:-65%;
+ width:42%;
+ transform:rotate(22deg);
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),rgba(229,199,145,.55),transparent);
+ animation:stoorGoldShine 4.8s ease-in-out infinite;
+ pointer-events:none;
+}
+@keyframes stoorGoldShine{
+ 0%,58%{left:-65%}
+ 82%,100%{left:135%}
+}
+.hero-copy .btn-light:hover,
+.why-copy .btn-dark:hover,
+.visit-copy .btn:hover{
+ border-color:#d8bd8d;
+ box-shadow:0 8px 24px rgba(185,154,105,.28);
+ transform:translateY(-2px);
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-image>img,
+ .hero-copy .eyebrow,.hero-copy .hero-wordmark,.hero-copy h1,
+ .hero-copy>p,.hero-copy .btn,.hero-copy .hero-note{
+  opacity:1;animation:none;transform:none
+ }
+ .hero-copy .btn-light::after,
+ .why-copy .btn-dark::after,
+ .visit-copy .btn::after{animation:none;display:none}
+}
