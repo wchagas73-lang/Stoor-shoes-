@@ -82,3 +82,26 @@ document.addEventListener('click',event=>{
 document.addEventListener('keydown',event=>{
   if(event.key==='Escape'&&photoViewer.classList.contains('open')) closePhotoViewer();
 });
+
+
+// Revela textos e blocos suavemente conforme entram na área visível.
+const revealTargets=document.querySelectorAll(
+  '.section-heading, .benefits article, .occasion-card, .product-card, .why-copy, .why-image, .review-carousel, .faq-list details, .visit-copy, .map-frame'
+);
+revealTargets.forEach((element,index)=>{
+  element.classList.add('scroll-reveal');
+  element.style.setProperty('--reveal-delay', (index%4)*75+'ms');
+});
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -35px 0px'});
+  revealTargets.forEach(element=>revealObserver.observe(element));
+}else{
+  revealTargets.forEach(element=>element.classList.add('is-visible'));
+}
