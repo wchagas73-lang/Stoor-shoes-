@@ -1,0 +1,61 @@
+name: Extrair imagens do ZIP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "stoor-shoes-publicar.zip"
+      - ".github/workflows/extrair-imagens.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extrair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Extrair arquivos do ZIP na raiz do site
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import os
+
+          archive = Path("stoor-shoes-publicar.zip")
+          if not archive.is_file():
+              raise SystemExit("Arquivo stoor-shoes-publicar.zip não encontrado.")
+
+          root = Path(".").resolve()
+          with ZipFile(archive) as z:
+              for item in z.infolist():
+                  name = item.filename
+                  if not name or name.startswith("/") or "\\\\" in name:
+                      raise SystemExit(f"Caminho inválido no ZIP: {name}")
+                  target = (root / name).resolve()
+                  if root not in target.parents and target != root:
+                      raise SystemExit(f"Entrada fora do repositório: {name}")
+              z.extractall(root)
+
+          if not Path("assets/IMG-20261123-WA0080.jpg").is_file():
+              raise SystemExit("Logo não encontrada após extração.")
+          images = list(Path("assets").glob("*.jpg")) + list(Path("assets").glob("*.jpeg")) + list(Path("assets").glob("*.png")) + list(Path("assets").glob("*.webp"))
+          print(f"Extração concluída: {len(images)} imagens em assets/.")
+          PY
+
+      - name: Salvar arquivos extraídos no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets index.html styles.css script.js README.txt
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração para salvar."
+          else
+            git commit -m "Extrai automaticamente imagens e arquivos do ZIP"
+            git push
+          fi
