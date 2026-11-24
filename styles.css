@@ -345,3 +345,41 @@ img{max-width:100%}
 .product-grid .product-card:last-child:hover .product-photo img{
   transform:none!important;
 }
+
+
+/* Borboletas em movimento contínuo, com densidade constante durante toda a rolagem */
+.stoor-butterfly-layer{
+  position:fixed;
+  inset:0;
+  z-index:12;
+  overflow:hidden;
+  pointer-events:none;
+  contain:layout paint;
+}
+.stoor-butterfly{
+  position:absolute;
+  top:var(--flight-top);
+  left:0;
+  width:var(--flight-size);
+  height:calc(var(--flight-size) * .86);
+  color:var(--butterfly-color);
+  opacity:.82;
+  animation:stoorButterflyFlight var(--flight-duration) linear var(--flight-delay) infinite;
+  will-change:transform;
+  filter:drop-shadow(0 1px 2px rgba(35,12,15,.12));
+}
+.stoor-butterfly svg{display:block;width:100%;height:100%;overflow:visible}
+.stoor-butterfly .wing{fill:var(--butterfly-color);stroke:rgba(70,35,30,.22);stroke-width:1}
+.stoor-butterfly .body{fill:#4a3028}
+.stoor-butterfly .antenna{fill:none;stroke:#4a3028;stroke-width:1.5;stroke-linecap:round}
+@keyframes stoorButterflyFlight{
+  0%{transform:translate3d(-12vw,0,0) rotate(-8deg) scale(.88)}
+  18%{transform:translate3d(12vw,var(--flight-drift),0) rotate(9deg) scale(1)}
+  38%{transform:translate3d(38vw,calc(var(--flight-drift) * -0.45),0) rotate(-7deg) scale(.94)}
+  58%{transform:translate3d(62vw,var(--flight-drift),0) rotate(10deg) scale(1.04)}
+  78%{transform:translate3d(88vw,calc(var(--flight-drift) * -0.5),0) rotate(-6deg) scale(.92)}
+  100%{transform:translate3d(116vw,0,0) rotate(8deg) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .stoor-butterfly{animation:none;opacity:.58;transform:translateX(calc(var(--flight-top) * .05))}
+}
