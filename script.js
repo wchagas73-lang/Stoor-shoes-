@@ -1,0 +1,10 @@
+const menuToggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.main-nav');
+menuToggle.addEventListener('click',()=>{const opened=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(opened));menuToggle.textContent=opened?'×':'☰'});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.textContent='☰'}));
+const searchPanel=document.getElementById('searchPanel');
+document.getElementById('searchBtn').addEventListener('click',()=>{searchPanel.classList.add('open');searchPanel.setAttribute('aria-hidden','false');document.getElementById('searchInput').focus()});
+document.getElementById('closeSearch').addEventListener('click',()=>{searchPanel.classList.remove('open');searchPanel.setAttribute('aria-hidden','true')});
+searchPanel.addEventListener('click',e=>{if(e.target===searchPanel){searchPanel.classList.remove('open');searchPanel.setAttribute('aria-hidden','true')}});
+document.getElementById('searchInput').addEventListener('input',e=>{const term=e.target.value.toLocaleLowerCase('pt-BR');document.querySelectorAll('.product-card').forEach(card=>{card.style.display=card.innerText.toLocaleLowerCase('pt-BR').includes(term)?'':'none'})});
+document.getElementById('year').textContent=new Date().getFullYear();
