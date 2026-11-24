@@ -130,3 +130,57 @@ html{scroll-behavior:smooth}
   transition:none
  }
 }
+
+
+/* Imagens responsivas para celular, tablet e computador */
+img{max-width:100%}
+.hero{min-height:clamp(560px,58vw,760px)}
+.hero-copy{min-height:inherit}
+.hero-image{min-height:inherit}
+.hero-image>img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.occasion-grid,.product-grid{width:min(1160px,90%);margin-inline:auto}
+.occasion-card,.product-card{min-width:0;overflow:hidden;border:1px solid rgba(185,154,105,.48)}
+.occasion-card img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center}
+.product-photo{height:auto;aspect-ratio:4/5;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.why-image{height:auto;aspect-ratio:4/5;border:1px solid rgba(185,154,105,.55)}
+.why-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.photo-viewer>img{border:1px solid rgba(185,154,105,.75);border-radius:3px}
+@media(min-width:1200px){
+ .hero{min-height:clamp(680px,55vw,820px)}
+ .hero-copy{padding-left:max(8%,calc((100vw - 1160px)/2))}
+ .occasion-card img{aspect-ratio:4/4.7}
+ .product-photo{aspect-ratio:4/4.7}
+}
+@media(min-width:651px) and (max-width:900px){
+ .hero{min-height:600px}
+ .hero-copy{min-height:600px}
+ .hero-image{min-height:600px}
+ .occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+ .occasion-card img{aspect-ratio:4/4.5;height:auto}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+ .product-photo{height:auto;aspect-ratio:4/4.8}
+ .why-section{grid-template-columns:1fr 1fr}
+ .why-image{height:auto;aspect-ratio:4/5}
+}
+@media(max-width:650px){
+ .hero{min-height:0;display:flex;flex-direction:column}
+ .hero-image{position:relative;inset:auto;width:100%;height:auto;min-height:0;aspect-ratio:4/3;order:0}
+ .hero-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+ .hero-image:before{inset:0}
+ .hero-copy{min-height:0;order:1;padding:42px 8% 46px}
+ .occasion-grid,.product-grid{width:88%;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ .occasion-card{padding:6px 6px 14px}
+ .occasion-card img{height:auto;aspect-ratio:3/4;object-fit:cover}
+ .product-photo{height:auto;aspect-ratio:3/4}
+ .product-info{min-width:0;overflow-wrap:anywhere}
+ .why-image{width:100%;height:auto;aspect-ratio:4/3}
+ .photo-viewer{padding:12px}
+ .photo-viewer>img{max-width:96vw;max-height:86vh;width:auto;height:auto}
+}
+@media(max-width:380px){
+ .occasion-grid,.product-grid{width:92%;gap:10px}
+ .occasion-card img,.product-photo{aspect-ratio:2.8/4}
+ .occasion-card b{font-size:14px}
+ .product-info{padding:10px 8px 12px}
+}
