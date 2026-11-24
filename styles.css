@@ -375,3 +375,80 @@ img{max-width:100%}
   .site-header .brand{max-width:155px}
   .site-header .brand img{width:clamp(125px,36vw,150px)!important;max-height:52px}
 }
+
+
+/* Borboletas originais da Olivia Correa: mesmo emoji, movimento e distribuicao */
+.hero{position:relative}
+.hero-butterfly{
+ position:absolute;z-index:3;pointer-events:none;user-select:none;
+ font-size:clamp(30px,4vw,44px);
+ filter:drop-shadow(0 5px 7px rgba(65,88,57,.22));
+}
+.butterfly-one{top:10%;right:8%;animation:butterfly-loop-one 5.5s ease-in-out infinite}
+.butterfly-two{top:58%;left:46%;font-size:clamp(23px,3vw,32px);animation:butterfly-loop-two 6.5s ease-in-out infinite}
+.butterfly-three{top:42%;right:43%;font-size:clamp(19px,2.6vw,29px);animation:butterfly-loop-two 7.2s ease-in-out infinite .8s}
+.butterfly-four{top:78%;right:9%;font-size:22px;animation:butterfly-loop-one 8s ease-in-out infinite 1.1s}
+.butterfly-five{top:8%;left:43%;font-size:19px;animation:butterfly-loop-two 6.2s ease-in-out infinite 1.6s}
+@keyframes butterfly-loop-one{
+ 0%,100%{transform:translate(0,0) rotate(-14deg)}
+ 25%{transform:translate(-22px,-18px) rotate(12deg)}
+ 50%{transform:translate(-42px,8px) rotate(-8deg)}
+ 75%{transform:translate(-18px,24px) rotate(15deg)}
+}
+@keyframes butterfly-loop-two{
+ 0%,100%{transform:translate(0,0) rotate(10deg)}
+ 33%{transform:translate(24px,-20px) rotate(-16deg)}
+ 66%{transform:translate(38px,14px) rotate(12deg)}
+}
+/* Mesmo movimento leve aplicado nas demais secoes do site original */
+.benefits,.occasion-section,.collection,.why-section,.reviews,.faq-section,.visit-section,.footer{position:relative}
+.site-butterfly{
+ position:absolute;z-index:3;display:block;pointer-events:none;user-select:none;
+ font-size:clamp(21px,2.8vw,32px);opacity:.78;
+ filter:drop-shadow(0 4px 6px rgba(65,88,57,.16));
+ animation:site-butterfly-float 8s ease-in-out infinite;
+}
+.site-butterfly:nth-of-type(even){animation-name:site-butterfly-float-reverse;animation-duration:9.5s}
+@keyframes site-butterfly-float{
+ 0%,100%{transform:translate(0,0) rotate(-12deg)}
+ 35%{transform:translate(17px,-16px) rotate(9deg)}
+ 70%{transform:translate(-11px,13px) rotate(-5deg)}
+}
+@keyframes site-butterfly-float-reverse{
+ 0%,100%{transform:translate(0,0) rotate(10deg)}
+ 35%{transform:translate(-16px,15px) rotate(-9deg)}
+ 70%{transform:translate(13px,-12px) rotate(7deg)}
+}
+.sb-intro-a{top:18%;right:7%}.sb-intro-b{bottom:12%;left:8%;font-size:22px}
+.sb-collection-a{top:2px;right:7%;font-size:30px}.sb-collection-b{top:8px;left:5%;font-size:24px}
+.sb-story-a{top:8%;left:34%;font-size:24px}.sb-story-b{bottom:8%;right:5%}
+.sb-reviews-a{top:12%;left:4%}.sb-reviews-b{bottom:12%;right:5%;font-size:24px}
+.sb-faq-a{top:12%;right:3%}.sb-faq-b{bottom:9%;left:4%;font-size:23px}
+.sb-visit-a{top:12%;left:8%}.sb-visit-b{top:40%;right:8%;font-size:25px}
+.sb-footer{top:12%;right:12%;font-size:20px}
+/* Quatro borboletas nos intervalos da grade de produtos, como na galeria original */
+#productGrid{position:relative}
+#productGrid .gallery-butterfly{position:absolute;z-index:5;pointer-events:none;font-size:22px;opacity:.88;filter:drop-shadow(0 2px 4px rgba(65,88,57,.22))}
+#productGrid .gb-one{top:17%;left:calc(50% - 11px);font-size:20px;animation-delay:-1.2s}
+#productGrid .gb-two{top:43%;right:calc(0% - 11px);font-size:23px;animation-delay:-3.4s}
+#productGrid .gb-three{top:69%;left:calc(50% - 11px);font-size:19px;animation-delay:-2.1s}
+#productGrid .gb-four{bottom:5%;right:calc(50% - 11px);font-size:21px;animation-delay:-4.5s}
+@media(max-width:760px){
+ .butterfly-one{top:3%;right:10%}.butterfly-two{top:55%;left:auto;right:8%}
+ .butterfly-three{top:35%;right:4%;font-size:22px}.butterfly-four{top:76%;right:5%;font-size:20px}.butterfly-five{top:5%;left:8%;font-size:18px}
+ .site-butterfly{font-size:23px}
+ .sb-intro-a{top:7%;right:6%}.sb-intro-b{bottom:5%;left:4%}
+ .sb-collection-a{top:0;right:5%;font-size:25px}.sb-collection-b{top:7px;left:3%;font-size:22px}
+ .sb-story-a{top:3%;left:7%}.sb-story-b{bottom:4%;right:5%}
+ .sb-reviews-a{top:5%;left:3%}.sb-reviews-b{bottom:5%;right:4%}
+ .sb-faq-a{top:4%;right:4%}.sb-faq-b{bottom:4%;left:4%}
+ .sb-visit-a{top:5%;left:5%}.sb-visit-b{top:35%;right:5%}.sb-footer{top:5%;right:8%}
+ #productGrid .gallery-butterfly{font-size:19px}
+ #productGrid .gb-one{top:18%;left:calc(50% - 10px)}
+ #productGrid .gb-two{top:43%;right:calc(50% - 10px)}
+ #productGrid .gb-three{top:68%;left:calc(50% - 10px)}
+ #productGrid .gb-four{bottom:4%;right:calc(50% - 10px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-butterfly,.site-butterfly,#productGrid .gallery-butterfly{animation:none!important}
+}
