@@ -279,3 +279,45 @@ img{max-width:100%}
     background:linear-gradient(90deg,rgba(45,15,18,.14),rgba(45,15,18,.02) 72%),linear-gradient(0deg,rgba(45,15,18,.14),transparent 65%)!important;
   }
 }
+
+
+/* No celular, manter o texto da coleção sobre a foto principal */
+@media(max-width:650px){
+  .hero{
+    display:block!important;
+    position:relative!important;
+    min-height:650px!important;
+    height:650px!important;
+  }
+  .hero-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    aspect-ratio:auto!important;
+    z-index:0!important;
+  }
+  .hero-image>img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center 42%!important;
+  }
+  .hero-image:before{
+    background:linear-gradient(90deg,rgba(45,15,18,.28),rgba(45,15,18,.08) 78%),linear-gradient(0deg,rgba(45,15,18,.20),transparent 70%)!important;
+  }
+  .hero-copy{
+    position:relative!important;
+    z-index:2!important;
+    display:flex!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:650px!important;
+    padding:112px 8% 42px!important;
+    justify-content:center!important;
+    background:transparent!important;
+  }
+}
