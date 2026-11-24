@@ -106,28 +106,3 @@ if('IntersectionObserver' in window){
   revealTargets.forEach(element=>element.classList.add('is-visible'));
 }
 
-
-// Borboletas animadas em camada fixa: presença constante em todas as seções.
-(function(){
-  if(document.querySelector('.stoor-butterfly-layer')) return;
-  const layer=document.createElement('div');
-  layer.className='stoor-butterfly-layer';
-  layer.setAttribute('aria-hidden','true');
-  const colors=['#7c3037','#76513e','#d8c2a2'];
-  const count=12;
-  const svg='<svg viewBox="0 0 64 54" focusable="false" aria-hidden="true"><path class="wing" d="M30 25C19 4 3 4 5 19c1 8 12 13 25 12C17 42 12 52 21 51c7-1 11-10 12-19 2 9 7 18 14 19 9 1 4-9-9-20 13 1 24-4 25-12C65 4 49 4 34 25l-2 5z"/><path class="body" d="M31 24c-2 8-2 17 1 23 3-6 3-15 1-23z"/><path class="antenna" d="M31 25c-7-12-12-13-15-14M33 25c7-12 12-13 15-14"/></svg>';
-  for(let i=0;i<count;i++){
-    const item=document.createElement('span');
-    item.className='stoor-butterfly';
-    item.innerHTML=svg;
-    item.style.setProperty('--butterfly-color',colors[i%colors.length]);
-    item.style.setProperty('--flight-top',(5+Math.random()*88)+'vh');
-    item.style.setProperty('--flight-size',(19+Math.random()*17)+'px');
-    item.style.setProperty('--flight-duration',(22+Math.random()*18)+'s');
-    item.style.setProperty('--flight-delay',(-Math.random()*38)+'s');
-    item.style.setProperty('--flight-drift',(Math.random()*22-11)+'vh');
-    item.style.setProperty('--flight-sway',(Math.random()*12+5)+'deg');
-    layer.appendChild(item);
-  }
-  document.body.appendChild(layer);
-})();
