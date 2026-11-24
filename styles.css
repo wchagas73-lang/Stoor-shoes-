@@ -492,3 +492,24 @@ img{max-width:100%}
  .butterfly-two{top:70%;left:auto;right:10%;font-size:24px}
  .butterfly-three{top:43%;right:42%;font-size:22px}
 }
+
+
+/* Distribuicao das borboletas ao longo de todo o site, alternando os lados */
+.benefits .sb-intro-a{top:48%;right:7%;left:auto}
+.occasion-section .sb-collection-a{top:46%;left:6%;right:auto}
+.collection .sb-story-a{top:48%;right:7%;left:auto}
+.why-section .sb-story-a{top:46%;left:6%;right:auto}
+.reviews .sb-reviews-a{top:48%;right:7%;left:auto}
+.faq-section .sb-faq-a{top:46%;left:6%;right:auto}
+.visit-section .sb-visit-a{top:48%;right:7%;left:auto}
+.footer .sb-footer{top:42%;left:7%;right:auto}
+@media(max-width:760px){
+ .benefits .sb-intro-a{top:42%;right:5%;left:auto}
+ .occasion-section .sb-collection-a{top:44%;left:5%;right:auto}
+ .collection .sb-story-a{top:43%;right:5%;left:auto}
+ .why-section .sb-story-a{top:44%;left:5%;right:auto}
+ .reviews .sb-reviews-a{top:43%;right:5%;left:auto}
+ .faq-section .sb-faq-a{top:44%;left:5%;right:auto}
+ .visit-section .sb-visit-a{top:43%;right:5%;left:auto}
+ .footer .sb-footer{top:40%;left:6%;right:auto}
+}
