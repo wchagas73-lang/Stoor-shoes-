@@ -20,3 +20,21 @@ section[id]{scroll-margin-top:105px}
  .map-frame,.map-frame iframe{min-height:250px;height:250px}
  .floating-social{right:13px;bottom:14px}
 }
+
+
+/* Carrosseis automáticos de avaliações */
+.review-carousels{display:grid;gap:18px;overflow:hidden}
+.review-carousel{width:100%;overflow:hidden;position:relative;cursor:grab;touch-action:pan-y}
+.review-track{display:flex;gap:12px;width:max-content;animation:review-marquee 34s linear infinite}
+.review-carousel-two .review-track{animation-name:review-marquee-reverse;animation-duration:39s}
+.review-carousel:hover .review-track,.review-carousel.is-paused .review-track{animation-play-state:paused}
+.review-track article{flex:0 0 clamp(210px,22vw,245px);width:clamp(210px,22vw,245px);min-height:160px}
+@keyframes review-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes review-marquee-reverse{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(max-width:650px){
+ .review-carousels{gap:12px}
+ .review-track{gap:9px;animation-duration:28s}
+ .review-carousel-two .review-track{animation-duration:32s}
+ .review-track article{flex-basis:220px;width:220px;min-height:145px}
+}
+@media(prefers-reduced-motion:reduce){.review-track{animation:none!important;transform:none!important}}
