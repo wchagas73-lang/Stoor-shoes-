@@ -107,11 +107,9 @@ if('IntersectionObserver' in window){
 }
 
 
-// Quatro borboletas decorativas entre os produtos, seguindo a distribuicao da galeria original.
-['gb-one','gb-two','gb-three','gb-four'].forEach(className=>{
- const butterfly=document.createElement('span');
- butterfly.className='site-butterfly gallery-butterfly '+className;
- butterfly.setAttribute('aria-hidden','true');
- butterfly.textContent='🦋';
- document.getElementById('productGrid').appendChild(butterfly);
-});
+// Uma unica borboleta discreta no centro da grade de produtos.
+const galleryButterfly=document.createElement('span');
+galleryButterfly.className='site-butterfly gallery-butterfly gb-one';
+galleryButterfly.setAttribute('aria-hidden','true');
+galleryButterfly.textContent='🦋';
+document.getElementById('productGrid').appendChild(galleryButterfly);
