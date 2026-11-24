@@ -321,3 +321,27 @@ img{max-width:100%}
     background:transparent!important;
   }
 }
+
+
+/* Última foto de produto: mostrar a sandália inteira, sem corte */
+.product-grid .product-card:last-child .product-photo{
+  height:auto!important;
+  aspect-ratio:auto!important;
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#fffdf9!important;
+  border:1px solid rgba(185,154,105,.85)!important;
+}
+.product-grid .product-card:last-child .product-photo img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+}
+.product-grid .product-card:last-child:hover .product-photo img{
+  transform:none!important;
+}
