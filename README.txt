@@ -6,17 +6,13 @@ Arquivos:
 - script.js: menu mobile, busca e interações simples
 - assets/: fotos e logo enviados no arquivo ZIP
 
-EXTRAÇÃO AUTOMÁTICA DE IMAGENS
-O GitHub Actions executa o workflow ".github/workflows/extrair-imagens.yml".
-Quando "stoor-shoes-publicar.zip" for enviado ou atualizado na branch main, o workflow extrai automaticamente o conteúdo na raiz do projeto e salva os arquivos no GitHub. A pasta assets/ e a logo IMG-20261123-WA0080.jpg são verificadas durante a execução.
-Não é necessário extrair as imagens manualmente pelo celular.
-
 PUBLICAÇÃO NO CLOUDFLARE PAGES
-1. Conecte este repositório ao Cloudflare Pages.
-2. Framework preset: None.
-3. Build command: deixe vazio.
-4. Build output directory: / (raiz do projeto).
-5. Salve e aguarde a publicação.
+1. Envie o conteúdo desta pasta para um repositório GitHub.
+2. No Cloudflare Pages, conecte o repositório.
+3. Framework preset: None.
+4. Build command: deixe vazio.
+5. Build output directory: / (raiz do projeto).
+6. Salve e aguarde a publicação.
 
 PENDÊNCIAS ANTES DE DIVULGAR
 - Substituir os links de contato pelos endereços oficiais de WhatsApp e Instagram.
@@ -25,4 +21,4 @@ PENDÊNCIAS ANTES DE DIVULGAR
 - Substituir os textos-guia da área de avaliações por depoimentos reais autorizados.
 - Confirmar as políticas comerciais (trocas, entrega, parcelamento e reserva) antes de publicar.
 
-As avaliações atuais são textos-guia, não depoimentos reais. Não publique esses textos como avaliações de clientes.
+As avaliações estão como textos-guia, não como depoimentos reais. Não publique esses textos como avaliações de clientes.
