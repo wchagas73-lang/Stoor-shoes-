@@ -513,3 +513,21 @@ img{max-width:100%}
  .visit-section .sb-visit-a{top:43%;right:5%;left:auto}
  .footer .sb-footer{top:40%;left:6%;right:auto}
 }
+
+
+/* Mais borboletas ao longo da grade Nossos modelos */
+#productGrid .gallery-butterfly{
+  position:absolute;z-index:5;pointer-events:none;
+  font-size:clamp(18px,2vw,22px);opacity:.82;
+  filter:drop-shadow(0 2px 4px rgba(65,88,57,.2));
+}
+#productGrid .gb-one{top:13%;left:32%;font-size:21px}
+#productGrid .gb-two{top:37%;left:67%;font-size:19px}
+#productGrid .gb-three{top:62%;left:32%;font-size:22px}
+#productGrid .gb-four{top:86%;left:67%;font-size:20px}
+@media(max-width:760px){
+  #productGrid .gb-one{top:12%;left:49%;font-size:19px}
+  #productGrid .gb-two{top:36%;left:49%;font-size:18px}
+  #productGrid .gb-three{top:61%;left:49%;font-size:20px}
+  #productGrid .gb-four{top:85%;left:49%;font-size:19px}
+}
