@@ -452,3 +452,31 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){
  .hero-butterfly,.site-butterfly,#productGrid .gallery-butterfly{animation:none!important}
 }
+
+
+/* Ajuste de proporcao: menos borboletas e mais respiro visual */
+.hero-butterfly{font-size:clamp(22px,2.7vw,30px);opacity:.82}
+.butterfly-one{top:13%;right:9%}
+.butterfly-two{top:65%;left:48%;font-size:clamp(19px,2.2vw,25px)}
+@media(max-width:760px){
+ .butterfly-one{top:8%;right:7%;font-size:23px}
+ .butterfly-two{top:70%;left:auto;right:10%;font-size:20px}
+}
+/* Uma borboleta discreta por secao, em vez de pares */
+.sb-intro-a,.sb-collection-a,.sb-story-a,.sb-reviews-a,.sb-faq-a,.sb-visit-a,.sb-footer{
+ font-size:21px;opacity:.72
+}
+.sb-intro-a{top:50%;right:6%}
+.sb-collection-a{top:50%;right:5%}
+.sb-story-a{top:48%;left:3%}
+.sb-reviews-a{top:48%;left:5%}
+.sb-faq-a{top:48%;right:5%}
+.sb-visit-a{top:48%;left:5%}
+.sb-footer{top:12%;right:12%;font-size:19px}
+@media(max-width:760px){
+ .sb-intro-a,.sb-collection-a,.sb-story-a,.sb-reviews-a,.sb-faq-a,.sb-visit-a{top:48%;font-size:19px}
+}
+/* Somente uma borboleta no centro da grade, entre os produtos */
+#productGrid .gallery-butterfly{position:absolute;z-index:5;pointer-events:none;font-size:21px;opacity:.78;filter:drop-shadow(0 2px 4px rgba(65,88,57,.18))}
+#productGrid .gb-one{top:50%;left:50%;transform:translate(-50%,-50%);font-size:22px}
+@media(prefers-reduced-motion:reduce){.hero-butterfly,.site-butterfly{animation:none!important}}
