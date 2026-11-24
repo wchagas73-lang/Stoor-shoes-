@@ -531,3 +531,7 @@ img{max-width:100%}
   #productGrid .gb-three{top:61%;left:49%;font-size:20px}
   #productGrid .gb-four{top:85%;left:49%;font-size:19px}
 }
+
+
+/* Logo transparente no rodape, preservando o espaco e as dimensoes atuais */
+.footer-brand img{width:115px;height:76px;object-fit:contain;background:transparent}
